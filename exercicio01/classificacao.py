@@ -1,6 +1,8 @@
-porco1    = [1, 1, 0]
-porco2    = [1, 1, 0]
-porco3    = [1, 1, 0]
+from sklearn.naive_bayes import MultinomialNB
+
+porco1 = [1, 1, 0]
+porco2 = [1, 1, 0]
+porco3 = [1, 1, 0]
 cachorro1 = [1, 1, 1]
 cachorro2 = [0, 1, 1]
 cachorro3 = [0, 1, 1]
@@ -16,7 +18,6 @@ misterioso4 = [0, 0, 0]
 misterioso5 = [0, 0, 1]
 
 marcacoes_teste = [-1, 1, 1, 1, -1]
-from sklearn.naive_bayes import MultinomialNB
 
 modelo = MultinomialNB()
 modelo.fit(dados, marcacoes)
@@ -35,9 +36,9 @@ print(acertos)
 total_acertos = len(acertos)
 total_elementos = len(misteriosos)
 
-print("Total de elementos: "+str(total_elementos))
-print("Total de acertos: "+str(total_acertos))
+print("Total de elementos: " + str(total_elementos))
+print("Total de acertos: " + str(total_acertos))
 
 taxa_acertos = 100.0 * (total_acertos / total_elementos)
 
-print("Taxa de acerto: "+str(taxa_acertos))
+print("Taxa de acerto: " + str(taxa_acertos))

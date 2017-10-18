@@ -1,5 +1,7 @@
 from dados import carregar_acessos
-X,Y = carregar_acessos()
+from sklearn.naive_bayes import MultinomialNB
+
+X, Y = carregar_acessos()
 
 treino_dados = X[:90]
 treino_marcacoes = Y[:90]
@@ -7,7 +9,6 @@ treino_marcacoes = Y[:90]
 teste_dados = X[-9:]
 teste_marcacoes = Y[-9:]
 
-from sklearn.naive_bayes import MultinomialNB
 modelo = MultinomialNB()
 modelo.fit(treino_dados, treino_marcacoes)
 
