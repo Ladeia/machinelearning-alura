@@ -1,5 +1,6 @@
 import pandas as pd
 from collections import Counter
+from sklearn.naive_bayes import MultinomialNB
 
 df = pd.read_csv('buscas.csv')
 X_df = df[['home', 'busca', 'logado']]
@@ -22,7 +23,6 @@ treino_marcacoes = Y[:tamanho_de_treino]
 teste_dados = X[-tamanho_de_teste:]
 teste_marcacoes = Y[-tamanho_de_teste:]
 
-from sklearn.naive_bayes import MultinomialNB
 modelo = MultinomialNB()
 modelo.fit(treino_dados, treino_marcacoes)
 
